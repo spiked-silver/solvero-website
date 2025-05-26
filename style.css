@@ -1,0 +1,712 @@
+/* --- Global Styles & Variables --- */
+:root {
+    --color-primary-dark: #1985ce;
+    --color-primary-medium: #1dc5ff;
+    --color-primary-light: #35b0ed;
+    --color-white: #ffffff;
+    --color-text-dark: #333333;
+    --color-text-light: #f8f9fa; /* Off-white for contrast on dark */
+    --color-background: var(--color-white); /* Default background */
+    --font-primary: 'Hyperion', sans-serif; /* Specify fallback */
+    --font-secondary: 'Source Sans Pro', sans-serif;
+    --color-grey-light: #ced4da; /* Added for form borders */
+    --color-primary-medium-rgb: 29, 197, 255; /* Added for form focus shadow */
+}
+
+/*
+   IMPORTANT: @font-face rule for Hyperion
+   You need to have the font files (e.g., woff2, woff)
+   Place them in a 'fonts' folder and adjust the path.
+*/
+@font-face {
+  font-family: 'Hyperion';
+  src: url('fonts/hyperion.woff2') format('woff2'), /* Modern Browsers */
+       url('fonts/hyperion.woff') format('woff');   /* Older Browsers */
+  font-weight: normal; /* Adjust if you have different weights */
+  font-style: normal;  /* Adjust if you have italic, etc. */
+  font-display: swap; /* Improves perceived loading performance */
+}
+
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-secondary);
+    color: var(--color-text-dark);
+    background-color: var(--color-background);
+    line-height: 1.6;
+    font-size: 16px; /* Base font size */
+}
+
+/* --- Base Heading Styles --- */
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 1.5em; /* Consistent top margin */
+    margin-bottom: 0.75em; /* Consistent bottom margin */
+    line-height: 1.2;
+    color: var(--color-text-dark); /* Default color, overridden in .section-dark */
+}
+
+h1 {
+    font-family: var(--font-primary);
+    font-size: 3.5rem;
+    font-weight: normal; /* Hyperion might include weight */
+}
+
+h2 {
+    font-family: var(--font-primary);
+    font-size: 2.5rem;
+    font-weight: normal; /* Hyperion might include weight */
+}
+
+h3 {
+    font-family: var(--font-secondary);
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+h4 {
+    font-family: var(--font-secondary);
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+h5 {
+    font-family: var(--font-secondary);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+h6 {
+    font-family: var(--font-secondary);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    color: var(--color-primary-dark);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-primary-medium);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- Header Styles --- */
+.site-header {
+    padding: 12px 0; /* Reduced vertical padding */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: transparent;
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Add a subtle background gradient to ensure menu visibility before scrolling */
+.site-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 100%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.site-header .container.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: none;
+    margin: 0 auto;
+    padding: 0 80px; /* Increased side padding */
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo-link .logo-image {
+    height: 75px; /* Reduced initial height */
+    width: auto;
+    transition: height 0.3s ease;
+}
+/* If using text logo:
+.logo-link .logo-text {
+    font-family: var(--font-primary);
+    font-size: 2rem;
+    color: var(--color-primary-dark); // Or white if header is dark
+} */
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.main-nav a {
+    font-weight: 600;
+    color: var(--color-white); /* Changed to white for better visibility on all backgrounds */
+    padding-bottom: 5px;
+    position: relative;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.2); /* Add subtle text shadow for better readability */
+    transition: color 0.3s ease; /* Added transition for smooth color change */
+}
+.main-nav a::after { /* Underline effect on hover */
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-primary-light);
+    transition: width 0.3s ease;
+}
+.main-nav a:hover::after {
+    width: 100%;
+}
+.main-nav a.nav-contact-btn {
+    /* Optional: Style contact link differently */
+    /* background-color: var(--color-primary-medium); */
+    /* color: var(--color-white); */
+    /* padding: 8px 15px; */
+    /* border-radius: 5px; */
+}
+.main-nav a.nav-contact-btn:hover {
+     /* background-color: var(--color-primary-dark); */
+}
+.main-nav a.nav-contact-btn::after {
+    display: none; /* Disable underline for button-like link */
+}
+/* Sticky navbar background on scroll */
+.site-header.scrolled {
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.site-header.scrolled .main-nav a {
+    color: var(--color-primary-dark); /* Changed to primary-dark for brand consistency */
+    text-shadow: none; /* Remove text shadow when scrolled */
+}
+
+.site-header.scrolled .main-nav a:hover {
+    color: var(--color-primary-medium); /* Hover color when scrolled */
+}
+
+/* Active page indicator */
+.main-nav a.active {
+    color: var(--color-primary-light); /* Highlight active page */
+}
+
+.site-header.scrolled .main-nav a.active {
+    color: var(--color-primary-medium); /* Highlight active page when scrolled */
+}
+
+.site-header.scrolled .logo-link .logo-image {
+    height: 60px; /* Reduced scrolled height */
+}
+
+/* Service card hover effects */
+.service-card {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+/* Parallax background sections */
+.parallax {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Carousel styles */
+.swiper-container {
+    width: 100%;
+    padding: 50px 0;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Micro-interactions placeholder */
+.lottie-animation {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+}
+
+/* Animated counters */
+.counter {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-primary-dark);
+}
+
+
+/* --- Hero Section Styles --- */
+.hero {
+    min-height: 80vh; /* Minimum height */
+    /* Use your primary blue as background */
+    background-color: var(--color-primary-dark);
+    /* Optional: Gradient background */
+    /* background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary-light)); */
+    color: var(--color-text-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 150px 0 100px; /* Adjust padding top to account for header */
+    position: relative; /* For positioning potential background elements */
+    overflow: hidden; /* Prevent animations from spilling out */
+}
+
+.hero-content {
+    max-width: 800px; /* Limit content width */
+}
+
+.hero-logo-image {
+  max-width: 350px; /* Adjust size as needed */
+  height: auto;
+  margin: 0 auto 20px auto; /* Center it and add space below */
+  display: block;
+}
+
+.hero-title { /* Kept for potential future use or if logo fails */
+    font-family: var(--font-primary);
+    font-size: 4rem; /* Adjust size as needed */
+    font-weight: normal; /* Assuming Hyperion handles its weight */
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+    /* Animation properties are set on the class below */
+}
+
+.hero-tagline {
+    font-family: var(--font-secondary);
+    font-size: 1.5rem; /* Adjust size */
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+    /* Animation properties */
+}
+
+.hero-intro {
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    max-width: 600px; /* Make intro text slightly narrower */
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9;
+    /* Animation properties */
+}
+
+.hero-cta {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    /* Animation properties */
+}
+
+/* --- Button Styles --- */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-family: var(--font-secondary);
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Transition for hover effects */
+    transform: translateY(0); /* Base state for hover transform */
+}
+
+.btn-primary {
+    background-color: var(--color-primary-medium);
+    color: var(--color-white);
+    border-color: var(--color-primary-medium);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-light);
+    border-color: var(--color-primary-light);
+    color: var(--color-white);
+    transform: translateY(-3px); /* Slight lift on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-white);
+    border-color: var(--color-white);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-white);
+    color: var(--color-primary-dark);
+    transform: translateY(-3px); /* Slight lift on hover */
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+/* --- Animations --- */
+
+/* Keyframes for the fade-in-up effect */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply animation to elements */
+.animate-fade-in-up {
+    opacity: 0; /* Start hidden */
+    animation-name: fadeInUp;
+    animation-duration: 0.8s; /* Duration */
+    animation-timing-function: ease-out; /* Easing */
+    animation-fill-mode: forwards; /* Keep final state */
+}
+
+/* Stagger the animations using delays */
+/* Adjust animation delay if needed - the logo now comes first */
+.hero-logo-image.animate-fade-in-up {
+    animation-delay: 0.2s;
+}
+.hero-tagline.animate-fade-in-up {
+    animation-delay: 0.4s; /* Keep subsequent delays */
+}
+.hero-intro.animate-fade-in-up {
+    animation-delay: 0.6s;
+}
+.hero-cta.animate-fade-in-up {
+    animation-delay: 0.8s;
+}
+
+
+/* --- Utility & Component Classes --- */
+.text-center {
+    text-align: center;
+}
+
+.section-title {
+    font-family: var(--font-primary);
+    font-size: 2.5rem;
+    margin-bottom: 30px; /* Default margin */
+}
+
+.section-description {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px; /* Add default bottom margin */
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+/* Styles for content within service cards, assuming parent section provides background */
+.service-card-content {
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.card-title {
+    font-family: var(--font-primary);
+    margin-bottom: 15px;
+}
+
+.centered-button-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.cta-title {
+    font-family: var(--font-primary);
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.cta-description {
+    max-width: 600px;
+    margin: 0 auto 30px; /* Shorthand for top/bottom auto, left/right 30px */
+}
+
+.principles-list {
+    max-width: 800px;
+    list-style: disc;
+    padding-left: 20px; /* Keep specific padding */
+    margin-left: auto; /* Center the block */
+    margin-right: auto; /* Center the block */
+    margin-bottom: 50px; /* Keep specific margin */
+    /* Color is inherited from section-light */
+}
+.principles-list li {
+    margin-bottom: 10px; /* Add some space between list items */
+}
+
+.padding-medium {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.rounded-corners {
+    border-radius: 10px; /* Or use a variable */
+}
+
+/* --- Page Specific & Component Variations --- */
+.hero-services {
+    background: linear-gradient(135deg, #3A8DFF, #00D4FF);
+    color: var(--color-white); /* Ensure text is white */
+}
+
+.services-grid-large-gap {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.approach-grid { /* Renamed from services-grid for clarity */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.approach-step {
+    padding: 20px;
+}
+
+.approach-step-title {
+    font-family: var(--font-primary);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+/* Utility Classes */
+.mb-40 {
+    margin-bottom: 40px;
+}
+
+/* --- Contact Page Specific Styles --- */
+.hero-contact {
+    background-color: #121212;
+    color: var(--color-white);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.commitment-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+}
+
+.commitment-list li {
+    margin-bottom: 10px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: #0A0A0A; /* Slightly different dark */
+    padding: 30px;
+    border-radius: 10px; /* Use variable if defined */
+    color: var(--color-text-light); /* Use variable */
+}
+
+.contact-form label {
+    font-weight: 600; /* Make labels slightly bolder */
+}
+
+.form-input {
+    padding: 12px 15px; /* Adjusted padding */
+    border: 1px solid var(--color-grey-light); /* Added border */
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: var(--color-white); /* Ensure background is white */
+    color: var(--color-text-dark); /* Ensure text is dark */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Added transition */
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--color-primary-medium);
+    box-shadow: 0 0 5px rgba(var(--color-primary-medium-rgb), 0.5);
+}
+
+/* Style the button within the contact form */
+.contact-form button {
+    /* Mimic .btn styles */
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-family: var(--font-secondary);
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform: translateY(0);
+    /* Mimic .btn-primary styles */
+    background-color: var(--color-primary-medium);
+    color: var(--color-white);
+    border-color: var(--color-primary-medium);
+    /* Add hover effect */
+}
+
+.contact-form button:hover {
+    background-color: var(--color-primary-light);
+    border-color: var(--color-primary-light);
+    color: var(--color-white);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Utility Classes (Additions) --- */
+.mb-5 { margin-bottom: 5px; }
+.mb-10 { margin-bottom: 10px; }
+.mb-20 { margin-bottom: 20px; }
+.mb-50 { margin-bottom: 50px; }
+.mb-60 { margin-bottom: 60px; }
+.mt-10 { margin-top: 10px; }
+.mt-20 { margin-top: 20px; }
+.mr-15 { margin-right: 15px; }
+
+/* --- Footer Styles --- */
+.site-footer {
+    background-color: #f8f9fa; /* Light grey footer */
+    color: #6c757d; /* Muted text color */
+    padding: 30px 0;
+    text-align: center;
+    margin-top: 50px; /* Space above footer */
+}
+
+/* --- Basic Responsiveness --- */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+    .hero-tagline {
+        font-size: 1.2rem;
+    }
+    .hero-intro {
+        font-size: 1rem;
+    }
+    .main-nav ul {
+        /* Basic: Hide for now, implement toggle later */
+        display: none;
+    }
+    /* Adjust logo size for tablets */
+    .logo-link .logo-image {
+        height: 70px; /* Slightly smaller than desktop but still larger than original */
+    }
+    .site-header.scrolled .logo-link .logo-image {
+        height: 60px;
+    }
+    /* Add styles for a mobile menu icon/toggle here */
+}
+
+@media (max-width: 480px) {
+     .hero-title {
+        font-size: 2.5rem;
+    }
+    .hero {
+        padding-top: 120px;
+        padding-bottom: 80px;
+    }
+     .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+     }
+     .hero-cta {
+        gap: 10px;
+     }
+     /* Adjust logo size for mobile */
+     .logo-link .logo-image {
+        height: 60px; /* Same as original size for mobile */
+     }
+     .site-header.scrolled .logo-link .logo-image {
+        height: 50px; /* Same as original scrolled size for mobile */
+     }
+     /* Adjust header padding for mobile */
+     .site-header {
+        padding: 12px 0;
+     }
+}
+
+/* --- Section Backgrounds --- */
+.section-light {
+    background-color: var(--color-background, #ffffff); /* Use CSS variable or fallback */
+    color: var(--color-text-dark, #333333);
+    padding-top: 80px; /* Example padding - adjust as needed */
+    padding-bottom: 80px; /* Example padding - adjust as needed */
+}
+
+.section-dark {
+    background-color: #121212;
+    color: var(--color-text-light, #f0f0f0);
+    padding-top: 80px; /* Example padding - adjust as needed */
+    padding-bottom: 80px; /* Example padding - adjust as needed */
+}
+
+.section-dark h1,
+.section-dark h2,
+.section-dark h3,
+.section-dark h4,
+.section-dark h5,
+.section-dark h6 {
+    color: var(--color-white, #ffffff); /* Ensure headings are light on dark backgrounds */
+}

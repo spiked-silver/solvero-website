@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SOLVERO - Technology, Solved.</title>
+<link rel="stylesheet" href="style.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
+
+<!-- Swiper Carousel -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<!-- Particles.js background -->
+<style>
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  top: 0;
+  left: 0;
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-container">
+    <a href="index.html" class="logo-link">
+      <img src="images/solvero-logo-transparent-bg.png" alt="Solvero Logo" class="logo-image" loading="lazy" />
+    </a>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html" class="nav-contact-btn">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div id="particles-js"></div>
+  <div class="container hero-content">
+    <img src="images/solvero-logo-transparent-bg.png" alt="Solvero Logo" class="hero-logo-image animate-fade-in-up" />
+    <p class="hero-tagline animate-fade-in-up">Transforming Challenges into Digital Excellence</p>
+    <p class="hero-intro animate-fade-in-up">
+      We architect, build, and optimise cutting-edge software solutions that drive business growth and innovation.
+    </p>
+    <div class="hero-cta animate-fade-in-up">
+      <a href="services.html" class="btn btn-primary">See Our Services</a>
+      <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="container section-light text-center">
+  <h2 class="section-title">Who We Are</h2>
+  <p class="section-description">
+    Solvero is an elite team of technology strategists, engineers, and designers who thrive on solving complex digital challenges. We combine deep technical expertise with strategic thinking to deliver solutions that don't just work—they transform how businesses operate and compete in the digital landscape.
+  </p>
+</section>
+
+<section id="services" class="container section-dark">
+  <h2 class="section-title text-center">Our Technical Mastery</h2>
+  <div class="services-grid">
+    <div class="service-card animate-fade-in-up service-card-content">
+      <h3 class="card-title">Custom Software</h3>
+      <p>Bespoke applications engineered to your exact specifications, transforming business challenges into competitive advantages through elegant, scalable solutions.</p>
+    </div>
+    <div class="service-card animate-fade-in-up service-card-content">
+      <h3 class="card-title">Cloud & Infrastructure</h3>
+      <p>Future-proof architecture that scales with your ambitions—we design, deploy, and optimize cloud ecosystems that deliver unmatched performance, security, and cost efficiency.</p>
+    </div>
+    <div class="service-card animate-fade-in-up service-card-content">
+      <h3 class="card-title">Data & AI</h3>
+      <p>Harness the full potential of your data through sophisticated analytics, predictive modeling, and AI-powered automation that delivers actionable insights and transformative business intelligence.</p>
+    </div>
+  </div>
+  <div class="centered-button-container">
+    <a href="services.html" class="btn btn-primary">See All Services</a>
+  </div>
+</section>
+
+<section id="work" class="container section-light text-center">
+  <h2 class="section-title">Success Stories</h2>
+  <p class="section-description">
+    Explore how our technical expertise has revolutionized businesses across industries—from startups to enterprises—delivering measurable ROI through innovative digital transformation.
+  </p>
+  <div class="centered-button-container">
+    <a href="contact.html" class="btn btn-primary">Partner With Us</a>
+  </div>
+</section>
+
+<section class="container section-dark text-center">
+  <h2 class="cta-title">Ready to transform your digital future?</h2>
+  <p class="cta-description">Schedule a consultation with our technical strategists to discuss your challenges and discover how Solvero can elevate your business.</p>
+  <a href="contact.html" class="btn btn-primary">Start the Conversation</a>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>© 2025 SOLVERO. All rights reserved.</p>
+    <p>
+      <a href="https://linkedin.com" target="_blank">LinkedIn</a> |
+      <a href="https://twitter.com" target="_blank">Twitter</a>
+    </p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.0.18/dist/lenis.min.js"></script>
+
+
+<!-- CountUp.js -->
+<script src="https://cdn.jsdelivr.net/npm/countup.js@2.6.2/dist/countUp.umd.js"></script>
+
+<!-- Swiper Carousel -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- Particles.js -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+<script src="script.js"></script>
+
+<script>
+
+// Sticky navbar background transition
+window.addEventListener('scroll', () => {
+  const header = document.querySelector('.site-header');
+  if(window.scrollY > 50){
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+});
+
+// Animate hero text with GSAP
+gsap.from('.hero-logo-image', {opacity:0, y:30, duration:1, delay:0.2}); // Updated selector
+gsap.from('.hero-tagline', {opacity:0, y:30, duration:1, delay:0.4});
+gsap.from('.hero-intro', {opacity:0, y:30, duration:1, delay:0.6});
+gsap.from('.hero-cta', {opacity:0, y:30, duration:1, delay:0.8});
+
+// Initialize particles.js
+particlesJS('particles-js', {
+  "particles": {
+    "number": {
+      "value": 80,
+      "density": {
+        "enable": true,
+        "value_area": 800
+      }
+    },
+    "color": {
+      "value": "#ffffff"
+    },
+    "shape": {
+      "type": "circle",
+      "stroke": {
+        "width": 0,
+        "color": "#000000"
+      },
+      "polygon": {
+        "nb_sides": 5
+      }
+    },
+    "opacity": {
+      "value": 0.5,
+      "random": false,
+      "anim": {
+        "enable": false,
+        "speed": 1,
+        "opacity_min": 0.1,
+        "sync": false
+      }
+    },
+    "size": {
+      "value": 3,
+      "random": true,
+      "anim": {
+        "enable": false,
+        "speed": 40,
+        "size_min": 0.1,
+        "sync": false
+      }
+    },
+    "line_linked": {
+      "enable": true,
+      "distance": 150,
+      "color": "#ffffff",
+      "opacity": 0.4,
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 2,
+      "direction": "none",
+      "random": false,
+      "straight": false,
+      "out_mode": "out",
+      "bounce": false,
+      "attract": {
+        "enable": false,
+        "rotateX": 600,
+        "rotateY": 1200
+      }
+    }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": {
+        "enable": true,
+        "mode": "grab"
+      },
+      "onclick": {
+        "enable": true,
+        "mode": "push"
+      },
+      "resize": true
+    },
+    "modes": {
+      "grab": {
+        "distance": 140,
+        "line_linked": {
+          "opacity": 1
+        }
+      },
+      "bubble": {
+        "distance": 400,
+        "size": 40,
+        "duration": 2,
+        "opacity": 8,
+        "speed": 3
+      },
+      "repulse": {
+        "distance": 200,
+        "duration": 0.4
+      },
+      "push": {
+        "particles_nb": 4
+      },
+      "remove": {
+        "particles_nb": 2
+      }
+    }
+  },
+  "retina_detect": true
+});
+console.log('particles.js initialized');
+
+// Example CountUp animation (replace with your counters)
+document.addEventListener('DOMContentLoaded', () => {
+  const counters = document.querySelectorAll('.countup');
+  counters.forEach(counter => {
+    const endVal = parseInt(counter.getAttribute('data-count'), 10);
+    const countUp = new countUp.CountUp(counter, endVal);
+    if (!countUp.error) {
+      countUp.start();
+    } else {
+      console.error(countUp.error);
+    }
+  });
+});
+
+// Initialize Swiper carousel (add your container in HTML)
+const swiper = new Swiper('.swiper-container', {
+  loop: true,
+  autoplay: { delay: 3000 },
+  pagination: { el: '.swiper-pagination', clickable: true },
+  navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }
+});
+</script>
+</body>
+</html>
