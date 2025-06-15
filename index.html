@@ -1,286 +1,522 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>SOLVERO - Technology, Solved.</title>
-<link rel="stylesheet" href="style.css" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+<html lang="en"><head>
+<meta charset="UTF-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+<meta http-equiv="Expires" content="0"/>
+<title>Solvero - Technology, Solved.</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 
 
-<!-- Swiper Carousel -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
-<!-- Particles.js background -->
-<style>
-#particles-js {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  top: 0;
-  left: 0;
-}
-.hero-content {
-  position: relative;
-  z-index: 1;
-}
-</style>
+<style>        body {
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+        .bg-brand-gradient {
+            background: linear-gradient(90deg, #1985ce, #1dc5ff, #35b0ed);
+        }
+        .text-brand-primary {
+            color: #1985ce;
+        }
+        .text-brand-secondary {
+            color: #1dc5ff;
+        }
+        .text-brand-tertiary {
+            color: #35b0ed;
+        }
+        .border-brand-primary {
+            border-color: #1985ce;
+        }
+        .hover-bg-brand-primary-darker:hover {
+            background-color: #136aa1;
+        }
+        .bg-brand-primary {
+            background-color: #1985ce;
+        }
+        .bg-brand-secondary {
+            background-color: #1dc5ff;
+        }
+        .bg-brand-tertiary {
+            background-color: #35b0ed;
+        }
+          /* For particles background */
+        #particles-js {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          z-index: 0;
+          top: 0;
+          left: 0;
+        }
+        .hero-content {
+          position: relative;
+          z-index: 1;
+        }    </style>
 </head>
-<body>
+<body class="bg-gray-100">
+<nav class="bg-white shadow-md sticky top-0 z-50">
+<div class="container mx-auto px-6 py-1.5 flex justify-between items-center">
+<div class="flex items-center">
+<img alt="Solvero logo" class="h-20" src="images/Solvero Main Logo.png"/>
+</div>
+<div class="hidden md:flex items-center space-x-6">
+<a class="text-gray-600 hover:text-brand-primary" href="#home">Home</a>
+<a class="text-gray-600 hover:text-brand-primary" href="#services">Services</a>
+<a class="text-gray-600 hover:text-brand-primary" href="#about">About Us</a>
+<a class="text-gray-600 hover:text-brand-primary" href="#expertise">Expertise</a>
+<a class="bg-brand-primary text-white px-6 py-2 rounded-md hover-bg-brand-primary-darker transition duration-300" href="#contact">Get in Touch</a>
+</div>
+<div class="md:hidden">
+<button class="text-gray-600 focus:outline-none" id="mobile-menu-button">
+<span class="material-icons">menu</span>
+</button>
+</div>
+</div>
+<div class="hidden md:hidden px-6 pb-4 space-y-2" id="mobile-menu">
+<a class="block text-gray-600 hover:text-brand-primary" href="#home">Home</a>
+<a class="block text-gray-600 hover:text-brand-primary" href="#services">Services</a>
+<a class="block text-gray-600 hover:text-brand-primary" href="#about">About Us</a>
+<a class="block text-gray-600 hover:text-brand-primary" href="#expertise">Expertise</a>
+<a class="block w-full bg-brand-primary text-white px-6 py-2 rounded-md hover-bg-brand-primary-darker transition duration-300 mt-2 text-center" href="#contact">Get in Touch</a>
+</div>
+</nav><header class="bg-brand-gradient text-white pt-24 pb-20 md:pt-36 md:pb-32 relative" id="home">
+<div id="particles-js"></div>
+<div class="container mx-auto px-6 relative z-10">
+<div class="text-center mx-auto hero-content">
+<p class="text-2xl md:text-4xl lg:text-5xl font-semibold mb-6 md:mb-8 leading-tight">
+            Transforming Challenges into Digital Excellence
+        </p>
+<p class="text-lg md:text-xl mb-8 md:mb-12">Tailored technology solutions for the modern enterprise.</p>
+<a class="bg-white text-brand-primary font-semibold px-8 py-3 rounded-md hover:bg-gray-100 transition duration-300 text-lg" href="#services">Discover Our Services</a>
+</div>
+</div>
+</header><section class="py-16 md:py-24 bg-white" id="services">
+<div class="container mx-auto px-6">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-12">Our Services</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+<div class="flex items-center justify-center bg-brand-primary text-white rounded-full w-16 h-16 mb-6">
+<span class="material-icons text-3xl">analytics</span>
+</div>
+<h3 class="text-2xl font-semibold text-gray-800 mb-3">Business Analysis</h3>
+<p class="text-gray-600">Expert requirement gathering and process mapping to align technology solutions with business objectives in financial services.</p>
+</div>
+<div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+<div class="flex items-center justify-center bg-brand-secondary text-white rounded-full w-16 h-16 mb-6">
+<span class="material-icons text-3xl">cloud_queue</span>
+</div>
+<h3 class="text-2xl font-semibold text-gray-800 mb-3">Systems Architecture</h3>
+<p class="text-gray-600">Design of scalable, secure system architectures tailored for banking and insurance applications with compliance in mind.</p>
+</div>
+<div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+<div class="flex items-center justify-center bg-brand-tertiary text-white rounded-full w-16 h-16 mb-6">
+<span class="material-icons text-3xl">code</span>
+</div>
+<h3 class="text-2xl font-semibold text-gray-800 mb-3">Technology Advisory</h3>
+<p class="text-gray-600">Independent consultation on technology decisions with a specialization in financial technology integration.</p>
+</div>
+<div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+<div class="flex items-center justify-center bg-brand-primary text-white rounded-full w-16 h-16 mb-6">
+<span class="material-icons text-3xl">integration_instructions</span>
+</div>
+<h3 class="text-2xl font-semibold text-gray-800 mb-3">Digital Transformation</h3>
+<p class="text-gray-600">Strategic guidance for modernizing legacy banking and insurance systems to adapt to evolving market demands.</p>
+</div>
+<div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+<div class="flex items-center justify-center bg-brand-secondary text-white rounded-full w-16 h-16 mb-6">
+<span class="material-icons text-3xl">security</span>
+</div>
+<h3 class="text-2xl font-semibold text-gray-800 mb-3">Project Planning</h3>
+<p class="text-gray-600">Comprehensive technology project planning that considers both technical requirements and financial business priorities.</p>
+</div>
+<div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+<div class="flex items-center justify-center bg-brand-tertiary text-white rounded-full w-16 h-16 mb-6">
+<span class="material-icons text-3xl">account_tree</span>
+</div>
+<h3 class="text-2xl font-semibold text-gray-800 mb-3">Systems Integration</h3>
+<p class="text-gray-600">Seamless integration strategies for connecting disparate banking and insurance systems and data sources.</p>
+</div>
+</div>
+</div>
+</section>
 
-<header class="site-header">
-  <div class="container header-container">
-    <a href="index.html" class="logo-link">
-      <img src="images/solvero-logo-transparent-bg.png" alt="Solvero Logo" class="logo-image" loading="lazy" />
-    </a>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html" class="nav-contact-btn">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+<section class="py-16 md:py-24 bg-gray-100" id="about">
+<div class="container mx-auto px-6">
+<div class="flex flex-col md:flex-row items-center">
+<div class="md:w-1/2 mb-8 md:mb-0 md:pr-12">
+<img alt="Financial technology concept" class="rounded-lg shadow-xl w-full" src="images/solvero-logo-transparent-bg.png"/>
+</div>
+<div class="md:w-1/2">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">About Solvero</h2>
+<p class="text-gray-700 text-lg mb-4">Solvero is a specialized consultancy that brings clarity to complex technical challenges in the financial services industry. With deep expertise in business and systems analysis, we offer strategic guidance and innovative solutions that align with your business goals.</p>
+<p class="text-gray-700 text-lg mb-6">Founded with a passion for solving problems at the intersection of finance and technology, our approach combines industry knowledge with technical acumen to bridge the gap between business needs and technology implementation.</p>
+<a class="bg-brand-primary text-white px-8 py-3 rounded-md hover-bg-brand-primary-darker transition duration-300 text-lg" href="#contact">Learn More</a>
+</div>
+</div>
+</div></section>
 
-<main>
-<section class="hero">
-  <div id="particles-js"></div>
-  <div class="container hero-content">
-    <img src="images/solvero-logo-transparent-bg.png" alt="Solvero Logo" class="hero-logo-image animate-fade-in-up" />
-    <p class="hero-tagline animate-fade-in-up">Transforming Challenges into Digital Excellence</p>
-    <p class="hero-intro animate-fade-in-up">
-      We architect, build, and optimise cutting-edge software solutions that drive business growth and innovation.
-    </p>
-    <div class="hero-cta animate-fade-in-up">
-      <a href="services.html" class="btn btn-primary">See Our Services</a>
-      <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
+<section class="py-16 md:py-24 bg-white" id="expertise">
+<div class="container mx-auto px-6">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-12">Our Expertise</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="rounded-lg overflow-hidden shadow-lg group">
+<div class="w-full h-64 bg-gray-200 flex items-center justify-center">
+<span class="material-icons text-6xl text-brand-primary">account_balance</span>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold text-gray-800 mb-2">Banking Systems</h3>
+<p class="text-gray-600 text-sm mb-4">Core banking, digital transformation, and customer experience solutions for modern financial institutions.</p>
+</div>
+</div>
+<div class="rounded-lg overflow-hidden shadow-lg group">
+<div class="w-full h-64 bg-gray-200 flex items-center justify-center">
+<span class="material-icons text-6xl text-brand-secondary">health_and_safety</span>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold text-gray-800 mb-2">Insurance Technology</h3>
+<p class="text-gray-600 text-sm mb-4">Policy administration, claims processing, and advanced analytics for insurance providers.</p>
+</div>
+</div>
+<div class="rounded-lg overflow-hidden shadow-lg group">
+<div class="w-full h-64 bg-gray-200 flex items-center justify-center">
+<span class="material-icons text-6xl text-brand-tertiary">payments</span>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold text-gray-800 mb-2">Financial Analytics</h3>
+<p class="text-gray-600 text-sm mb-4">Data-driven insights and visualization tools for financial decision-making and risk management.</p>
+</div>
+</div>
+</div>
+<div class="mt-16">
+<h3 class="text-2xl font-semibold text-gray-800 mb-8 text-center">Technology Stack</h3>
+<div class="grid grid-cols-3 md:grid-cols-6 gap-6 items-center">
+    <!-- Placeholder tech stack logos -->
+    <div class="bg-gray-100 p-4 rounded-lg flex items-center justify-center h-20">
+        <span class="text-gray-600 font-semibold">React</span>
     </div>
-  </div>
-</section>
-
-<section id="about" class="container section-light text-center">
-  <h2 class="section-title">Who We Are</h2>
-  <p class="section-description">
-    Solvero is an elite team of technology strategists, engineers, and designers who thrive on solving complex digital challenges. We combine deep technical expertise with strategic thinking to deliver solutions that don't just work—they transform how businesses operate and compete in the digital landscape.
-  </p>
-</section>
-
-<section id="services" class="container section-dark">
-  <h2 class="section-title text-center">Our Technical Mastery</h2>
-  <div class="services-grid">
-    <div class="service-card animate-fade-in-up service-card-content">
-      <h3 class="card-title">Custom Software</h3>
-      <p>Bespoke applications engineered to your exact specifications, transforming business challenges into competitive advantages through elegant, scalable solutions.</p>
+    <div class="bg-gray-100 p-4 rounded-lg flex items-center justify-center h-20">
+        <span class="text-gray-600 font-semibold">Node.js</span>
     </div>
-    <div class="service-card animate-fade-in-up service-card-content">
-      <h3 class="card-title">Cloud & Infrastructure</h3>
-      <p>Future-proof architecture that scales with your ambitions—we design, deploy, and optimize cloud ecosystems that deliver unmatched performance, security, and cost efficiency.</p>
+    <div class="bg-gray-100 p-4 rounded-lg flex items-center justify-center h-20">
+        <span class="text-gray-600 font-semibold">AWS</span>
     </div>
-    <div class="service-card animate-fade-in-up service-card-content">
-      <h3 class="card-title">Data & AI</h3>
-      <p>Harness the full potential of your data through sophisticated analytics, predictive modeling, and AI-powered automation that delivers actionable insights and transformative business intelligence.</p>
+    <div class="bg-gray-100 p-4 rounded-lg flex items-center justify-center h-20">
+        <span class="text-gray-600 font-semibold">Python</span>
     </div>
-  </div>
-  <div class="centered-button-container">
-    <a href="services.html" class="btn btn-primary">See All Services</a>
-  </div>
-</section>
+    <div class="bg-gray-100 p-4 rounded-lg flex items-center justify-center h-20">
+        <span class="text-gray-600 font-semibold">Kubernetes</span>
+    </div>
+    <div class="bg-gray-100 p-4 rounded-lg flex items-center justify-center h-20">
+        <span class="text-gray-600 font-semibold">ML/AI</span>
+    </div>
+</div>
+</div>
+</div></section>
 
-<section id="work" class="container section-light text-center">
-  <h2 class="section-title">Success Stories</h2>
-  <p class="section-description">
-    Explore how our technical expertise has revolutionized businesses across industries—from startups to enterprises—delivering measurable ROI through innovative digital transformation.
-  </p>
-  <div class="centered-button-container">
-    <a href="contact.html" class="btn btn-primary">Partner With Us</a>
-  </div>
-</section>
+<section class="py-16 md:py-24 bg-brand-gradient text-white relative">
+<div id="particles-js-testimonials" class="absolute inset-0 z-0"></div>
+<div class="container mx-auto px-6 relative z-10">
+<h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Our Approach</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-white bg-opacity-20 p-8 rounded-lg shadow-md backdrop-blur-md">
+<h3 class="text-xl font-bold mb-4">Strategic Analysis</h3>
+<p class="text-lg mb-4">We begin with a thorough understanding of your business context, technical requirements, and strategic objectives to ensure solutions address core challenges.</p>
+</div>
+<div class="bg-white bg-opacity-20 p-8 rounded-lg shadow-md backdrop-blur-md">
+<h3 class="text-xl font-bold mb-4">Value-Driven Solutions</h3>
+<p class="text-lg mb-4">Our recommendations and implementations focus on delivering measurable business value through technology that aligns perfectly with your organizational goals.</p>
+</div>
+</div>
+</div></section>
 
-<section class="container section-dark text-center">
-  <h2 class="cta-title">Ready to transform your digital future?</h2>
-  <p class="cta-description">Schedule a consultation with our technical strategists to discuss your challenges and discover how Solvero can elevate your business.</p>
-  <a href="contact.html" class="btn btn-primary">Start the Conversation</a>
-</section>
-</main>
+<section class="py-16 md:py-24 bg-white" id="contact">
+<div class="container mx-auto px-6">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-12">Get in Touch</h2>
+<div class="max-w-3xl mx-auto bg-gray-50 p-8 md:p-12 rounded-lg shadow-xl">
+<form>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div>
+<label class="block text-gray-700 font-semibold mb-2" for="name">Full Name</label>
+<input class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-primary" id="name" name="name" required="" type="text"/>
+</div>
+<div>
+<label class="block text-gray-700 font-semibold mb-2" for="email">Email Address</label>
+<input class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-primary" id="email" name="email" required="" type="email"/>
+</div>
+</div>
+<div class="mb-6">
+<label class="block text-gray-700 font-semibold mb-2" for="subject">Subject</label>
+<input class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-primary" id="subject" name="subject" required="" type="text"/>
+</div>
+<div class="mb-6">
+<label class="block text-gray-700 font-semibold mb-2" for="message">Message</label>
+<textarea class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-primary" id="message" name="message" required="" rows="5"></textarea>
+</div>
+<div class="text-center">
+<button class="bg-brand-primary text-white px-10 py-3 rounded-md hover-bg-brand-primary-darker transition duration-300 text-lg font-semibold" type="submit">Send Message</button>
+</div>
+</form>
+</div>
+<div class="text-center mt-12 text-gray-700">
+<p class="text-lg mb-2">You can also reach us at:</p>
+<p><span class="material-icons align-middle text-brand-primary mr-2">email</span> solutions@solvero.co.za</p>
+<p><span class="material-icons align-middle text-brand-primary mr-2">phone</span> +27 (0) 21 555 0100</p>
+<p><span class="material-icons align-middle text-brand-primary mr-2">location_on</span> Cape Town, South Africa</p>
+</div>
+</div></section>
 
-<footer class="site-footer">
-  <div class="container">
-    <p>© 2025 SOLVERO. All rights reserved.</p>
-    <p>
-      <a href="https://linkedin.com" target="_blank">LinkedIn</a> |
-      <a href="https://twitter.com" target="_blank">Twitter</a>
-    </p>
-  </div>
+<footer class="bg-gray-800 text-gray-300 py-12">
+<div class="container mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+<div>
+<div class="mb-4">
+<img alt="Solvero logo" class="h-20 mx-auto md:mx-0 brightness-0 invert" src="images/Solvero Main Logo.png"/>
+</div>
+<p class="text-sm">Technology, Solved. We empower businesses with strategic analysis and innovative solutions for financial services.</p>
+</div>
+<div>
+<h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+<ul class="space-y-2 text-sm">
+<li><a class="hover:text-brand-tertiary" href="#home">Home</a></li>
+<li><a class="hover:text-brand-tertiary" href="#services">Services</a></li>
+<li><a class="hover:text-brand-tertiary" href="#about">About Us</a></li>
+<li><a class="hover:text-brand-tertiary" href="#expertise">Expertise</a></li>
+<li><a class="hover:text-brand-tertiary" href="#contact">Contact</a></li>
+<li><a class="hover:text-brand-tertiary" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-brand-tertiary" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold text-white mb-4">Connect With Us</h4>
+<div class="flex space-x-4">
+<a class="text-gray-300 hover:text-brand-tertiary" href="#"><svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path></svg></a>
+<a class="text-gray-300 hover:text-brand-tertiary" href="#"><svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg></a>
+<a class="text-gray-300 hover:text-brand-tertiary" href="#"><svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M19.75 5.135a.75.75 0 00-.75-.75H5a.75.75 0 00-.75.75v13.73c0 .414.336.75.75.75h14a.75.75 0 00.75-.75V5.135zm-1.5 0H5.75v1.705h12.5V5.135zm-12.5 3.205v8.99h12.5v-8.99H5.75z" fill-rule="evenodd"></path><path d="M8.004 8.968h1.588V16.5h-1.588V8.968zm3.188-2.045c.836 0 1.38.544 1.38 1.233v.188c0 .68-.545 1.234-1.38 1.234-.827 0-1.38-.554-1.38-1.234v-.188c0-.69.553-1.233 1.38-1.233zm-.794 3.59h1.587V16.5h-1.587V10.513zm4.782 0h1.548V16.5h-1.548v-3.65c0-.915-.33-1.54-1.154-1.54-.625 0-.99.42-1.154.826-.06.14-.074.333-.074.53v3.833h-1.548s.02-5.437 0-6.01h1.548v.826c.25-.39.695-.945 1.397-.945 1.021 0 1.78.67 1.78 2.105v4.024z"></path></svg></a>
+</div>
+<p class="text-sm mt-6">Subscribe to our newsletter for the latest insights:</p>
+<form class="mt-3 flex">
+<input class="w-full px-3 py-2 rounded-l-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-brand-primary text-sm" placeholder="Your email" type="email"/>
+<button class="bg-brand-primary text-white px-4 py-2 rounded-r-md hover-bg-brand-primary-darker transition duration-300 text-sm" type="submit">Subscribe</button>
+</form>
+</div>
+</div>
+<div class="border-t border-gray-700 pt-8 text-center text-sm">
+<p>© 2025 Solvero IT (Pty) Ltd. All rights reserved.</p>
+</div>
+</div>
 </footer>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/lenis@1.0.18/dist/lenis.min.js"></script>
-
-
-<!-- CountUp.js -->
-<script src="https://cdn.jsdelivr.net/npm/countup.js@2.6.2/dist/countUp.umd.js"></script>
-
-<!-- Swiper Carousel -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <!-- Particles.js -->
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
-<script src="script.js"></script>
-
 <script>
-
-// Sticky navbar background transition
-window.addEventListener('scroll', () => {
-  const header = document.querySelector('.site-header');
-  if(window.scrollY > 50){
-    header.classList.add('scrolled');
-  } else {
-    header.classList.remove('scrolled');
-  }
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+mobileMenuButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    const icon = mobileMenuButton.querySelector('.material-icons');
+    icon.textContent = mobileMenu.classList.contains('hidden') ? 'menu' : 'close';
 });
 
-// Animate hero text with GSAP
-gsap.from('.hero-logo-image', {opacity:0, y:30, duration:1, delay:0.2}); // Updated selector
-gsap.from('.hero-tagline', {opacity:0, y:30, duration:1, delay:0.4});
-gsap.from('.hero-intro', {opacity:0, y:30, duration:1, delay:0.6});
-gsap.from('.hero-cta', {opacity:0, y:30, duration:1, delay:0.8});
+// Smooth scrolling for anchor links with navbar offset
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        
+        // Special handling for home section to scroll all the way to the top
+        if (targetId === '#home') {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        } else {
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                // Get navbar height to use as offset
+                const navbarHeight = document.querySelector('nav').offsetHeight;
+                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+        
+        // If mobile menu is open, close it after clicking a link
+        if (!mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.add('hidden');
+            mobileMenuButton.querySelector('.material-icons').textContent = 'menu';
+        }
+    });
+});
 
 // Initialize particles.js
-particlesJS('particles-js', {
-  "particles": {
-    "number": {
-      "value": 80,
-      "density": {
-        "enable": true,
-        "value_area": 800
-      }
-    },
-    "color": {
-      "value": "#ffffff"
-    },
-    "shape": {
-      "type": "circle",
-      "stroke": {
-        "width": 0,
-        "color": "#000000"
-      },
-      "polygon": {
-        "nb_sides": 5
-      }
-    },
-    "opacity": {
-      "value": 0.5,
-      "random": false,
-      "anim": {
-        "enable": false,
-        "speed": 1,
-        "opacity_min": 0.1,
-        "sync": false
-      }
-    },
-    "size": {
-      "value": 3,
-      "random": true,
-      "anim": {
-        "enable": false,
-        "speed": 40,
-        "size_min": 0.1,
-        "sync": false
-      }
-    },
-    "line_linked": {
-      "enable": true,
-      "distance": 150,
-      "color": "#ffffff",
-      "opacity": 0.4,
-      "width": 1
-    },
-    "move": {
-      "enable": true,
-      "speed": 2,
-      "direction": "none",
-      "random": false,
-      "straight": false,
-      "out_mode": "out",
-      "bounce": false,
-      "attract": {
-        "enable": false,
-        "rotateX": 600,
-        "rotateY": 1200
-      }
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize particles for hero section
+    particlesJS('particles-js', {
+        "particles": {
+            "number": {
+                "value": 80,
+                "density": {
+                    "enable": true,
+                    "value_area": 800
+                }
+            },
+            "color": {
+                "value": "#ffffff"
+            },
+            "shape": {
+                "type": "circle",
+                "stroke": {
+                    "width": 0,
+                    "color": "#000000"
+                },
+                "polygon": {
+                    "nb_sides": 5
+                }
+            },
+            "opacity": {
+                "value": 0.5,
+                "random": false,
+                "anim": {
+                    "enable": false,
+                    "speed": 1,
+                    "opacity_min": 0.1,
+                    "sync": false
+                }
+            },
+            "size": {
+                "value": 3,
+                "random": true,
+                "anim": {
+                    "enable": false,
+                    "speed": 40,
+                    "size_min": 0.1,
+                    "sync": false
+                }
+            },
+            "line_linked": {
+                "enable": true,
+                "distance": 150,
+                "color": "#ffffff",
+                "opacity": 0.4,
+                "width": 1
+            },
+            "move": {
+                "enable": true,
+                "speed": 2,
+                "direction": "none",
+                "random": false,
+                "straight": false,
+                "out_mode": "out",
+                "bounce": false,
+                "attract": {
+                    "enable": false,
+                    "rotateX": 600,
+                    "rotateY": 1200
+                }
+            }
+        },
+        "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+                "onhover": {
+                    "enable": true,
+                    "mode": "grab"
+                },
+                "onclick": {
+                    "enable": true,
+                    "mode": "push"
+                },
+                "resize": true
+            },
+            "modes": {
+                "grab": {
+                    "distance": 140,
+                    "line_linked": {
+                        "opacity": 1
+                    }
+                },
+                "bubble": {
+                    "distance": 400,
+                    "size": 40,
+                    "duration": 2,
+                    "opacity": 8,
+                    "speed": 3
+                },
+                "repulse": {
+                    "distance": 200,
+                    "duration": 0.4
+                },
+                "push": {
+                    "particles_nb": 4
+                },
+                "remove": {
+                    "particles_nb": 2
+                }
+            }
+        },
+        "retina_detect": true
+    });
+    console.log('Hero particles.js initialized');
+    
+    // Initialize particles for testimonials section if exists
+    if (document.getElementById('particles-js-testimonials')) {
+        particlesJS('particles-js-testimonials', {
+            "particles": {
+                "number": {
+                    "value": 40,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "opacity": {
+                    "value": 0.3,
+                    "random": false
+                },
+                "size": {
+                    "value": 3,
+                    "random": true
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.2,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 1,
+                    "direction": "none",
+                    "random": false
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": false
+                    }
+                }
+            }
+        });
+        console.log('Testimonials particles.js initialized');
     }
-  },
-  "interactivity": {
-    "detect_on": "canvas",
-    "events": {
-      "onhover": {
-        "enable": true,
-        "mode": "grab"
-      },
-      "onclick": {
-        "enable": true,
-        "mode": "push"
-      },
-      "resize": true
-    },
-    "modes": {
-      "grab": {
-        "distance": 140,
-        "line_linked": {
-          "opacity": 1
-        }
-      },
-      "bubble": {
-        "distance": 400,
-        "size": 40,
-        "duration": 2,
-        "opacity": 8,
-        "speed": 3
-      },
-      "repulse": {
-        "distance": 200,
-        "duration": 0.4
-      },
-      "push": {
-        "particles_nb": 4
-      },
-      "remove": {
-        "particles_nb": 2
-      }
-    }
-  },
-  "retina_detect": true
-});
-console.log('particles.js initialized');
-
-// Example CountUp animation (replace with your counters)
-document.addEventListener('DOMContentLoaded', () => {
-  const counters = document.querySelectorAll('.countup');
-  counters.forEach(counter => {
-    const endVal = parseInt(counter.getAttribute('data-count'), 10);
-    const countUp = new countUp.CountUp(counter, endVal);
-    if (!countUp.error) {
-      countUp.start();
-    } else {
-      console.error(countUp.error);
-    }
-  });
-});
-
-// Initialize Swiper carousel (add your container in HTML)
-const swiper = new Swiper('.swiper-container', {
-  loop: true,
-  autoplay: { delay: 3000 },
-  pagination: { el: '.swiper-pagination', clickable: true },
-  navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }
 });
 </script>
 </body>
 </html>
+  
